@@ -10,9 +10,9 @@ function Warrior (name, attack, defense, health) {
 
   // Methodes
   this.fight = function(warrior) {
-    alert(this.name + " attacks " + warrior.name);
+    this.script.innerHTML += "<p>- " + this.name + " attaque " + warrior.name + "</p>";
     warrior.health = warrior.health - this.attack;
-    alert(warrior.name + " has " + warrior.health + " life left");
+    this.script.innerHTML += "<p>- " +warrior.name + " a " + warrior.health + " de vie restante" + "</p>";
   };
   // Show the Warrior picture and its image on the sreen
   this.show = function() {
@@ -21,13 +21,6 @@ function Warrior (name, attack, defense, health) {
     this.warriorSide.lastChild.children[1].innerHTML = this.name
   };
 }
-
-var thor = new Warrior("Thor", 40, 50, 200);
-thor.show();
-//var zeus = new Warrior("Zeus", 60, 30, 200);
-
-// thor.fight(zeus);
-// zeus.fight(thor);
 
 function Wizzard (name, attack, defense, health, mana) {
 // Properties
@@ -42,19 +35,20 @@ function Wizzard (name, attack, defense, health, mana) {
 
   // Methodes
   this.fight = function(warrior) {
-    alert(this.name + " attacks " + warrior.name);
+    this.script.innerHTML += "<p>- " + this.name + " attaque " + warrior.name + "</p>";
     warrior.health = warrior.health - this.attack;
-    alert(warrior.name + " has " + warrior.health + " life left");
+    this.script.innerHTML += "<p>- " +warrior.name + " a " + warrior.health + " de vie restante" + "</p>";
   };
+
   this.heal = function() {
+    this.script.innerHTMl += "<p>- " + this.name + " essaie de se soigner " + "</p>";
     if (this.mana > 10) {
-      alert(this.name + " try to heal himself ");
       this.health += 10;
       this.mana -= 10;
-      alert(this.name + " has now " + this.health);
+      this.script.innerHTMl += "<p>- " + this.name + " a maintenant " + this.health + "</p>";
     }
     else {
-      alert("Not enough mana");
+      this.script.innerHTMl += "<p>- Not enough mana</p>";
     }
   };
 
@@ -66,10 +60,16 @@ function Wizzard (name, attack, defense, health, mana) {
   };
 }
 
+var thor = new Warrior("Thor", 40, 50, 200);
+thor.show();
+var zeus = new Warrior("Zeus", 60, 30, 200);
+zeus.show();
+thor.fight(zeus);
+zeus.fight(thor);
+
 var Gandalf = new Wizzard("Gandalf", 30, 40, 250, 40);
 Gandalf.show();
-
-// thor.fight(Gandalf);
-// zeus.fight(Gandalf);
-// Gandalf.heal();
-// Gandalf.fight(thor);
+thor.fight(Gandalf);
+zeus.fight(Gandalf);
+Gandalf.heal();
+Gandalf.fight(thor);

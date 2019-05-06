@@ -12,5 +12,5 @@ font-family: 'Fredericka the Great', cursive;
 
 #battleScript{
   overflow: scroll;
-  min-height: 200px;
+  max-height: 60vh;
 }
