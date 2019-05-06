@@ -48,15 +48,15 @@ function Wizzard (name, attack, defense, health, mana) {
 function BoardHandler() {
   this.script = document.getElementById('battleScript');
   this.warriorSide = document.getElementById('warriorSide');
-  this.warriorHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/knight.svg' alt=''><p class='secondFont font-weight-bold'></p></div>";
+  this.warriorHTML = "<div class='w-25 text-center my-2 character'><img class='img-fluid' src='img/knight.svg' alt=''><p class='secondFont font-weight-bold'></p></div>";
   this.wizardSide = document.getElementById('wizardSide');
-  this.wizardHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/wizard.svg' alt=''><p class='secondFont font-weight-bold'></p></div>";
+  this.wizardHTML = "<div class='w-25 text-center my-2 character'><img class='img-fluid' src='img/wizard.svg' alt=''><p class='secondFont font-weight-bold'></p></div>";
 
   // Show the Warrior picture and its image on the sreen
   this.showWarrior = function(warrior) {
-    this.script.innerHTML += "<p>- Un nouveau guerrier apparaît...</p>"
+    this.script.innerHTML += "<p>- Un nouveau guerrier apparaît...</p>";
     this.warriorSide.innerHTML += this.warriorHTML;
-    this.warriorSide.lastChild.children[1].innerHTML = warrior.name
+    this.warriorSide.lastChild.children[1].innerHTML = warrior.name;
   };
 
   // Show the Wizard picture and its image on the sreen
@@ -66,22 +66,48 @@ function BoardHandler() {
     this.wizardSide.lastChild.children[1].innerHTML = wizard.name;
   };
 
+  this.updateScroll = function(){
+    this.script.scrollTop = this.script.scrollHeight;
+  }
+
   //Display a message on the game script on the left side
   this.displayMessage = function(message) {
     this.script.innerHTML += "<p>" + message + "</p>";
+    this.updateScroll();
   };
 }
 var boardHandler = new BoardHandler();
-var thor = new Warrior("Thor", 40, 50, 200);
-boardHandler.showWarrior(thor);
-var zeus = new Warrior("Zeus", 60, 30, 200);
-boardHandler.showWarrior(zeus);
-thor.fight(zeus);
-zeus.fight(thor);
-
+var aragorn = new Warrior("Aragorn", 40, 50, 200);
+var gimli = new Warrior("Gimli", 60, 30, 200);
 var Gandalf = new Wizzard("Gandalf", 30, 40, 250, 40);
-boardHandler.showWizard(Gandalf);
-thor.fight(Gandalf);
-zeus.fight(Gandalf);
-Gandalf.heal();
-Gandalf.fight(thor);
+
+//Script to launch a sample game in a precise order
+//In a real game, actions would commanded by events and user actions
+//This code is only for demo purpose
+setTimeout(function(){
+  boardHandler.showWarrior(aragorn);
+  setTimeout(function(){
+    boardHandler.showWarrior(gimli);
+    setTimeout(function(){
+      boardHandler.showWizard(Gandalf);
+      setTimeout(function(){
+        aragorn.fight(gimli);
+        setTimeout(function(){
+          gimli.fight(aragorn);
+          setTimeout(function(){
+            aragorn.fight(Gandalf);
+            setTimeout(function(){
+              gimli.fight(Gandalf);
+              setTimeout(function(){
+                Gandalf.heal();
+                setTimeout(function(){
+                  Gandalf.fight(aragorn);
+                }, 2000);
+              }, 2000);
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    }, 2000);
+  }, 2000);
+}, 2000);
