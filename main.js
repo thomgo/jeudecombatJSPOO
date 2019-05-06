@@ -4,6 +4,9 @@ function Warrior (name, attack, defense, health) {
   this.attack = attack;
   this.defense = defense;
   this.health = health;
+  this.script = document.getElementById('battleScript');
+  this.warriorSide = document.getElementById('warriorSide');
+  this.warriorHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/knight.svg' alt=''><p class='secondFont font-weight-bold'>Aragorn</p></div>"
 
   // Methodes
   this.fight = function(warrior) {
@@ -11,9 +14,16 @@ function Warrior (name, attack, defense, health) {
     warrior.health = warrior.health - this.attack;
     alert(warrior.name + " has " + warrior.health + " life left");
   };
+  // Show the Warrior picture and its image on the sreen
+  this.show = function() {
+    this.script.innerHTML += "<p>- Un nouveau guerrier apparaît...</p>"
+    this.warriorSide.innerHTML += this.warriorHTML;
+    this.warriorSide.lastChild.children[1].innerHTML = this.name
+  };
 }
 
 var thor = new Warrior("Thor", 40, 50, 200);
+thor.show();
 var zeus = new Warrior("Zeus", 60, 30, 200);
 
 // thor.fight(zeus);
