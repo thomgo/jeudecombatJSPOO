@@ -6,7 +6,7 @@ function Warrior (name, attack, defense, health) {
   this.health = health;
   this.script = document.getElementById('battleScript');
   this.warriorSide = document.getElementById('warriorSide');
-  this.warriorHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/knight.svg' alt=''><p class='secondFont font-weight-bold'>Aragorn</p></div>"
+  this.warriorHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/knight.svg' alt=''><p class='secondFont font-weight-bold'></p></div>"
 
   // Methodes
   this.fight = function(warrior) {
@@ -24,7 +24,7 @@ function Warrior (name, attack, defense, health) {
 
 var thor = new Warrior("Thor", 40, 50, 200);
 thor.show();
-var zeus = new Warrior("Zeus", 60, 30, 200);
+//var zeus = new Warrior("Zeus", 60, 30, 200);
 
 // thor.fight(zeus);
 // zeus.fight(thor);
@@ -36,6 +36,9 @@ function Wizzard (name, attack, defense, health, mana) {
   this.defense = defense;
   this.health = health;
   this.mana = mana;
+  this.script = document.getElementById('battleScript');
+  this.wizardSide = document.getElementById('wizardSide');
+  this.wizardHTML = "<div class='w-25 text-center my-2'><img class='img-fluid' src='img/wizard.svg' alt=''><p class='secondFont font-weight-bold'></p></div>"
 
   // Methodes
   this.fight = function(warrior) {
@@ -54,9 +57,17 @@ function Wizzard (name, attack, defense, health, mana) {
       alert("Not enough mana");
     }
   };
+
+  // Show the Wizard picture and its image on the sreen
+  this.show = function() {
+    this.script.innerHTML += "<p>- Un nouveau magicien apparaît...</p>"
+    this.wizardSide.innerHTML += this.wizardHTML;
+    this.wizardSide.lastChild.children[1].innerHTML = this.name
+  };
 }
 
 var Gandalf = new Wizzard("Gandalf", 30, 40, 250, 40);
+Gandalf.show();
 
 // thor.fight(Gandalf);
 // zeus.fight(Gandalf);
