@@ -16,8 +16,8 @@ function Warrior (name, attack, defense, health) {
 var thor = new Warrior("Thor", 40, 50, 200);
 var zeus = new Warrior("Zeus", 60, 30, 200);
 
-thor.fight(zeus);
-zeus.fight(thor);
+// thor.fight(zeus);
+// zeus.fight(thor);
 
 function Wizzard (name, attack, defense, health, mana) {
 // Properties
@@ -48,7 +48,7 @@ function Wizzard (name, attack, defense, health, mana) {
 
 var Gandalf = new Wizzard("Gandalf", 30, 40, 250, 40);
 
-thor.fight(Gandalf);
-zeus.fight(Gandalf);
-Gandalf.heal();
-Gandalf.fight(thor);
+// thor.fight(Gandalf);
+// zeus.fight(Gandalf);
+// Gandalf.heal();
+// Gandalf.fight(thor);
