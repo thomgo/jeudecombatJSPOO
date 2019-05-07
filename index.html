@@ -2,9 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Jeux de combat POO JS</title>
+    <title>Exercice Jeux de combat POO JS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fondamento|Fredericka+the+Great" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <!-- Header -->
+    <header class="jumbotron jumbotron-fluid bg-dark text-white">
+      <section class="container mainFont">
+        <h1 class="display-5">Exercice de jeux de combat en POO JavaScript <i class="fas fa-dragon"></i></h1>
+        <p class="lead">A la fin il ne devra en rester qu'un !</p>
+      </section>
+    </header>
+
+    <main class="container mb-3">
+      <div class="row">
+        <aside id="battleScript" class="col-sm-12 col-md-4 border border-dark">
+          <h3 class="font-weight-bold secondFont mt-2 text-center">Déroulé du combat</h3>
+          <p class="font-italic text-center">Informations sur chaque tour de jeu</p>
+        </aside>
+        <section class="col-sm-12 col-md-8 bg-light px-5" id="board">
+          <h3 class="font-weight-bold text-center secondFont mt-2">Plateau de jeu</h3>
+          <div class="d-flex">
+            <aside id="warriorSide" class="w-50 d-flex flex-column justify-content-start align-items-start">
+            </aside>
+            <aside id="wizardSide" class="w-50 d-flex flex-column justify-content-start align-items-end">
+              <!-- <div class="w-25 text-center my-2">
+                <img class="img-fluid" src="img/wizard.svg" alt="">
+                <p class="secondFont font-weight-bold">Gandalf</p>
+              </div> -->
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="jumbotron jumbotron-fluid bg-dark text-white mb-0 mt-5 py-3">
+      <section class="container text-center">
+        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp" class="text-success">Eucalyp</a> from <a href="https://www.flaticon.com/" class="text-success" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" class="text-success" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <div>Icons made by <a href="https://www.freepik.com/" title="Freepik" class="text-success">Freepik</a> from <a href="https://www.flaticon.com/" class="text-success" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" class="text-success" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      </section>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

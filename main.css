@@ -1,0 +1,16 @@
+.mainFont {
+font-family: 'Fredericka the Great', cursive;
+}
+
+.secondFont {
+  font-family: 'Fondamento', cursive;
+}
+
+#board {
+  min-height: 60vh;
+}
+
+#battleScript{
+  overflow: scroll;
+  max-height: 60vh;
+}

@@ -1,6 +1,8 @@
 # Exercice jeu de combat en POO JavaScript
 
-Il s'agit d'un exercice que j'ai produit dans le cadre de mon poste de formateur en développement web à Simplon Roubaix. Cet exercice est donné aux apprenants afin d'améliorer leur pratique de la programmation orientée objet.Il s'agit d'un classique des exercices de POO, à savoir un jeu de combat type RPG faisant combattre différents personnages.
+Il s'agit d'un exercice que j'ai produit dans le cadre de mon poste de formateur en développement web. Cet exercice est donné aux apprenants afin d'améliorer leur pratique de la programmation orientée objet en JavaScript. Il s'agit d'un classique des exercices de POO, à savoir un jeu de combat type RPG faisant intervenir différents types personnages.
+
+Une version de l'exercice avec une interface graphique est visible à :
 
 Au travers de cet exercice, ils apprennent à :
 - déclarer des attributs
@@ -8,7 +10,6 @@ Au travers de cet exercice, ils apprennent à :
 - utiliser le constructeur d'objet   
 - modifier les attribut d'un objet via une méthode
 - passer un objet en argument d'une méthode d'un autre objet
-
 
 ## Consignes
 
@@ -21,7 +22,7 @@ Créez un constructeur qui permet de créer un guerrier. Ce constructeur initial
 - Une valeur d'attaque (number)
 - Une valeur de défense (number)
 - Une valeur de santé (number)
-- Une méthode combat qui permet de réduire la vie de la cible selon la valeur de l'attaque du combattant. Par exemple si guerrier1 a 10 d'attaque et guerrier 30 de santé, quand guerrier1 attaque guerrier2 sa santé passe à 20. En termes de code vous devriez avoir quelque chose comme :
+- Une méthode combat qui permet de réduire la vie de la cible selon la valeur de l'attaque du combattant. Par exemple si guerrier1 a 10 d'attaque et guerrier2 30 de santé, quand guerrier1 attaque guerrier2 sa santé passe à 20. En terme de code vous devriez avoir quelque chose comme :
 
 ```
 guerrier1.attack(guerrier2);
@@ -51,3 +52,7 @@ Pour tester ce nouveau script, créez un magicien, dites à vos deux guerriers d
 Normalement si tout fonctionne correctement, vous devriez voir les bonnes valeur de vie s'afficher.
 
 Voilà vous venez de créer un petit jeu en JavaScript, soyons honnête ce n'est le jeu du siècle mais il fait intervenir des concepts fondamentaux de programmation. Nous verrons par la suite comment l'améliorer avec l'héritage car pour l'instant, vous avez dû répéter beaucoup de code !
+
+### Pour aller plus loin
+
+Réalisez une interface simple en HTML/CSS pour afficher vos guerriers et magiciens ainsi que les étapes du combat. Attention, selon les effets que vous souhaitez intégrer, l'affichage graphique de votre jeux peut vous amener à écrire beaucoup de code. Rappelez-vous que l'objectif de cet exercice est de travailler la POO et non le DOM. Concentrez-vous donc sur la conception de vos objets avant tout.
