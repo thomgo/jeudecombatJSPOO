@@ -53,27 +53,25 @@ function Wizzard (name, attack, defense, health, mana) {
 function BoardHandler() {
   this.script = document.getElementById('battleScript');
   this.warriorSide = document.getElementById('warriorSide');
-  this.warriorHTML = "<div class='w-25 text-center my-2 character'><img class='img-fluid' src='img/knight.svg' alt=''><div class='secondFont font-weight-bold'></div><div class='secondFont font-weight-bold'></div></div>";
   this.wizardSide = document.getElementById('wizardSide');
-  this.wizardHTML = "<div class='w-25 text-center my-2 character'><img class='img-fluid' src='img/wizard.svg' alt=''><div class='secondFont font-weight-bold'></div><div class='secondFont font-weight-bold'></div></div>";
+  this.html = "<div class='w-25 text-center my-2 character'><img class='img-fluid' src='' alt=''><div class='secondFont font-weight-bold'></div><div class='secondFont font-weight-bold'></div></div>";
 
-  // Show the Warrior picture and its image on the sreen
-  this.showWarrior = function(warrior) {
-    this.script.innerHTML += "<p>- Un nouveau guerrier apparaît...</p>";
-    this.warriorSide.innerHTML += this.warriorHTML;
-    warrior.boardPosition = this.warriorSide.children.length - 1;
-    this.warriorSide.lastChild.children[1].innerHTML = warrior.name;
-    this.warriorSide.lastChild.children[2].innerHTML = warrior.health;
-  };
-
-  // Show the Wizard picture and its image on the sreen
-  this.showWizard = function(wizard) {
-    this.script.innerHTML += "<p>- Un nouveau magicien apparaît...</p>";
-    this.wizardSide.innerHTML += this.wizardHTML;
-    wizard.boardPosition = this.wizardSide.children.length - 1;
-    this.wizardSide.lastChild.children[1].innerHTML = wizard.name;
-    this.wizardSide.lastChild.children[2].innerHTML = wizard.health;
-  };
+  this.show = function(target) {
+    if (target.constructor.name == "Warrior" ) {
+      side = this.warriorSide;
+      src = "img/knight.svg";
+    }
+    else {
+      side = this.wizardSide;
+      src = "img/wizard.svg";
+    }
+    this.displayMessage("Un nouveau combattant apparaît...");
+    side.innerHTML += this.html;
+    target.boardPosition = side.children.length - 1;
+    side.lastChild.children[0].src = src;
+    side.lastChild.children[1].innerHTML = target.name;
+    side.lastChild.children[2].innerHTML = target.health;
+  }
 
   this.updateLife = function(target) {
     if (target.constructor.name == "Warrior" ) {
@@ -90,7 +88,7 @@ function BoardHandler() {
 
   //Display a message on the game script on the left side
   this.displayMessage = function(message) {
-    this.script.innerHTML += "<p>- " + message + "</p>";
+    this.script.innerHTML += "<p class='bg-dark text-success p-1 font-weight-bold rounded'>" + message + "</p>";
     this.updateScroll();
   };
 }
@@ -103,11 +101,11 @@ var Gandalf = new Wizzard("Gandalf", 30, 40, 250, 40);
 //In a real game, actions would commanded by events and user actions
 //This code is only for demo purpose
 setTimeout(function(){
-  boardHandler.showWarrior(aragorn);
+  boardHandler.show(aragorn);
   setTimeout(function(){
-    boardHandler.showWarrior(gimli);
+    boardHandler.show(gimli);
     setTimeout(function(){
-      boardHandler.showWizard(Gandalf);
+      boardHandler.show(Gandalf);
       setTimeout(function(){
         aragorn.fight(gimli);
         setTimeout(function(){
@@ -120,12 +118,12 @@ setTimeout(function(){
                 Gandalf.heal();
                 setTimeout(function(){
                   Gandalf.fight(aragorn);
-                }, 2000);
-              }, 2000);
-            }, 2000);
-          }, 2000);
-        }, 2000);
-      }, 2000);
-    }, 2000);
-  }, 2000);
-}, 2000);
+                }, 3000);
+              }, 3000);
+            }, 3000);
+          }, 3000);
+        }, 3000);
+      }, 3000);
+    }, 3000);
+  }, 3000);
+}, 3000);
