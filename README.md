@@ -2,7 +2,7 @@
 
 Il s'agit d'un exercice que j'ai produit dans le cadre de mon poste de formateur en développement web. Cet exercice est donné aux apprenants afin d'améliorer leur pratique de la programmation orientée objet en JavaScript. Il s'agit d'un classique des exercices de POO, à savoir un jeu de combat type RPG faisant intervenir différents types personnages.
 
-Une version de l'exercice avec une interface graphique est visible à :
+Une version de l'exercice avec une interface graphique est visible à : https://thomgo.github.io/jeudecombatJSPOO/
 
 Au travers de cet exercice, ils apprennent à :
 - déclarer des attributs
