@@ -55,4 +55,4 @@ Voilà vous venez de créer un petit jeu en JavaScript, soyons honnête ce n'est
 
 ### Pour aller plus loin
 
-Réalisez une interface simple en HTML/CSS pour afficher vos guerriers et magiciens ainsi que les étapes du combat.
+Réalisez une interface simple en HTML/CSS pour afficher vos guerriers et magiciens ainsi que les étapes du combat. Attention, selon les effets que vous souhaitez intégrer, l'affichage graphique de votre jeux peut vous amener à écrire beaucoup de code. Rappelez-vous que l'objectif de cet exercice est de travailler la POO et non le DOM. Concentrez-vous donc sur la conception de vos objets avant tout.
